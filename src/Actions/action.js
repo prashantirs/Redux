@@ -4,3 +4,9 @@ export const callAddAction = () => async (dispatch)=>{
         type: 'increment',
     });
 }
+export const callSubAction = () => async (dispatch)=>{
+    dispatch({
+        type: 'decrement',
+        payload: 5,
+    });
+}

@@ -9,6 +9,9 @@ const thisIsReducer = createReducer(initialState,{
     increment:(state) => {
                 state.c += 1;
     },
+    decrement:(state,action) => {
+                state.c -= action.payload;
+    },
 });
 
 export default thisIsReducer;
