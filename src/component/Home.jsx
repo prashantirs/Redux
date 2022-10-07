@@ -1,15 +1,19 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import {callAddAction} from '../Actions/action'
-
 const Home = () => {
     
  const dispatch = useDispatch();
+  const addHandler = () => { 
+    dispatch(callAddAction());
+ }
+ //useSelector is used to access the state variable from the store(actually in reducer)
+ const {c} = useSelector(state => state.prashantReducer);  
   return (
     <>
     <div>Home</div>
-    <div>{}</div>
-    <button className="add" onClick={dispatch(callAddAction())}>+</button>
+    <div>{c}</div>
+    <button className="add" onClick={addHandler}>+</button>
     </>
   )
 }
